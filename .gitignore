@@ -1,0 +1,15 @@
+# Node.js/Docusaurus
+node_modules/
+dist/
+build/
+*.log
+.env*
+package-lock.json
+
+# Universal
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
