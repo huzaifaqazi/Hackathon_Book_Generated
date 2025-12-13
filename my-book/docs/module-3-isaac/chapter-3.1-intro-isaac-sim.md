@@ -1,5 +1,7 @@
 # Chapter 3.1: Introduction to Isaac Sim and Its Ecosystem
 
+![The AI-Robot Brain (NVIDIA Isaac)](../assets/image3.png)
+
 In the previous module, we explored digital twins using Gazebo and Unity. While these are powerful tools, the demands of modern AI-driven robotics—especially those involving high-fidelity perception, large-scale data generation, and complex scene interaction—often require more advanced simulation capabilities. This is where **NVIDIA Isaac Sim**, built on the **NVIDIA Omniverse** platform, emerges as a leading solution.
 
 ## 1. What is NVIDIA Isaac Sim?

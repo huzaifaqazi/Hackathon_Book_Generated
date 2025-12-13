@@ -2,17 +2,22 @@ import type {ReactNode} from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import image1Image from '@site/static/img/image1.png';
+import image2ModuleImage from '@site/docs/assets/image2.png';
+import image3ModuleImage from '@site/docs/assets/image3.png';
+import image4ModuleImage from '@site/docs/assets/image4.png';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  Svg?: React.ComponentType<React.ComponentProps<'svg'>>;
+  imgSrc?: string;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: 'Module 1:',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    imgSrc: image1Image,
     description: (
       <>
       The Robotic Nervous System (ROS 2)
@@ -21,7 +26,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Module 2:',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    imgSrc: image2ModuleImage,
     description: (
       <>
       The Digital Twin (Gazebo & Unity)
@@ -30,20 +35,42 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Module 3:',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    imgSrc: image3ModuleImage,
     description: (
       <>
        The AI-Robot Brain (NVIDIA Isaac)
       </>
     ),
-  },
-];
-
-function Feature({title, Svg, description}: FeatureItem) {
+      },
+    {
+      title: 'Module 4:',
+      imgSrc: image4ModuleImage,
+      description: (
+        <>
+        Vision-Language-Action (VLA)
+        </>
+      ),
+    },
+  ];
+function Feature({title, Svg, imgSrc, description, link}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--3')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        {link ? (
+          <a href={link}>
+            {imgSrc ? (
+              <img src={imgSrc} className={styles.featureSvg} alt={title} />
+            ) : (
+              <Svg className={styles.featureSvg} role="img" />
+            )}
+          </a>
+        ) : (
+          imgSrc ? (
+            <img src={imgSrc} className={styles.featureSvg} alt={title} />
+          ) : (
+            <Svg className={styles.featureSvg} role="img" />
+          )
+        )}
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>

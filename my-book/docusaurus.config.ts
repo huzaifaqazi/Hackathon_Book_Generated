@@ -15,15 +15,15 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://ai-native-book.github.io',
+  url: 'https://huzaifaqazi.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/my-book/',
+  baseUrl: '/Hackathon_Book_Generated/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'ai-native-book', // Usually your GitHub org/user name.
-  projectName: 'my-book', // Usually your repo name.
+  organizationName: 'huzaifaqazi', // Usually your GitHub org/user name.
+  projectName: 'Hackathon_Book_Generated', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -45,7 +45,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/ai-native-book/my-book/tree/main/',
+            'https://github.com/huzaifaqazi/Hackathon_Book_Generated/tree/main/',
         },
         theme: {
           customCss: './src/css/custom.css',

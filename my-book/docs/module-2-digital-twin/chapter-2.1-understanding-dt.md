@@ -1,5 +1,7 @@
 # Chapter 2.1: Understanding Digital Twins
 
+![Module 2 Digital Twin](../assets/image2.png)
+
 ## The Concept of a Digital Twin
 
 In the complex world of robotics, especially for systems like humanoid robots, developing and testing directly on physical hardware presents numerous challenges: cost, risk of damage, safety concerns, and difficulty in reproducing scenarios. This is where the concept of a **Digital Twin** becomes invaluable.

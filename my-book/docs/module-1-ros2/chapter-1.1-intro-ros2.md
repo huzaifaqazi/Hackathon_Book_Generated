@@ -1,5 +1,7 @@
 # Chapter 1.1: Introduction to ROS 2 and Humanoid Control
 
+![The Robotic Nervous System (ROS 2)](../assets/image1.png)
+
 ## The Rise of Robotic Operating Systems
 
 As robotics systems grow in complexity, integrating various sensors, actuators, and intelligent behaviors becomes a significant challenge. This is where a Robotic Operating System (ROS) becomes indispensable. ROS provides a standardized framework for robotic software development, offering tools, libraries, and conventions that simplify the creation of sophisticated robotic applications.
