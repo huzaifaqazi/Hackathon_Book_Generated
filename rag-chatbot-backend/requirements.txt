@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+python-dotenv
+requests
+cohere
+qdrant-client
+openai
+psycopg2-binary
+unstructured
+pypdf
+sqlalchemy
+pydantic
+python-multipart
+pytest
