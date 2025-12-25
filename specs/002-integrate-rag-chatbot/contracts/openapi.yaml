@@ -1,0 +1,61 @@
+openapi: 3.0.0
+info:
+  title: RAG Chatbot API
+  version: 1.0.0
+paths:
+  /chat:
+    post:
+      summary: Get a response from the chatbot
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                  description: The user's question.
+                session_id:
+                  type: string
+                  description: The ID of the current chat session. Can be null for the first message.
+                selected_text:
+                  type: string
+                  description: Optional selected text from the user to provide more context.
+      responses:
+        '200':
+          description: A successful response from the chatbot.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+                    description: The chatbot's answer.
+                  sources:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+                          description: The URL of the source page.
+                        title:
+                          type: string
+                          description: The title of the source page or section.
+  /ingest:
+    post:
+      summary: Trigger the content ingestion process
+      description: Starts the process of fetching content from the sitemap, chunking, embedding, and storing it in the vector database.
+      responses:
+        '202':
+          description: Ingestion process has been started.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Ingestion process started."
