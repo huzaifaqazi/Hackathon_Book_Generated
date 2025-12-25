@@ -1,0 +1,1 @@
+I've applied a new fix to the chatbot's retrieval system and restarted the server. The "Typing..." issue should now be resolved. Please try your "what is ROS2?" query again and let me know the result.

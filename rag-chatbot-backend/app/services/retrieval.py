@@ -1,11 +1,13 @@
+from loguru import logger
 from ..services.vector_store import search_vectors
 from ..services.embeddings import generate_embeddings
 from qdrant_client import models
 
 def retrieve_chunks(query: str, limit: int = 5) -> list[dict]:
     query_embedding = generate_embeddings([query])[0]
-    
+    logger.info(f"Query embedding generated. Shape: {len(query_embedding)}")
     search_results = search_vectors(query_embedding, limit=limit)
+    logger.info(f"Search results: {search_results}")
     
     # Extract relevant information from search results
     retrieved_info = []

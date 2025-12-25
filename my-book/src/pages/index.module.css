@@ -7,7 +7,8 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  height: 100vh;
+  min-height: 100vh; /* Changed from height: 100vh; */
+  padding: 2rem 0; /* Added padding */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,16 +24,36 @@
 }
 
 .hero__image {
-  max-width: 100%;
-  height: 50%;
-  margin-top: 140px;
+  max-width: 60%;
+  height: auto;
+  margin-top: -4rem; /* Reduced from 2rem to 1rem */
 }
 
 .hero__text_content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: -120px;
+  margin-top: -5rem; /* Added 1rem margin-top */
+}
+
+/* Custom styles to keep image and text in one row */
+.heroBanner .row {
+  display: flex; /* Ensure it's a flex container */
+  flex-wrap: nowrap !important; /* Force no wrapping, even on small screens */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Vertically align items */
+  width: 100%; /* Ensure the row takes full width */
+}
+
+.heroBanner .col {
+  flex: 0 0 50% !important; /* Force columns to take 50% width, important for specificity */
+  max-width: 50% !important; /* Force columns to take 50% width, important for specificity */
+  min-width: 0; /* Allow flex item to shrink correctly */
+  padding: 0 1rem; /* Add some padding between columns if needed */
+}
+
+@media (max-width: 768px) { /* Adjust image height for smaller screens */
+  /* This rule is now less critical as height: auto is applied generally */
 }
 
 

@@ -1,0 +1,19 @@
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
+
+# Docusaurus build output
+/build
+/.docusaurus
+/docs/
+/src/
+/static/
+blog/
+.gitignore
+docusaurus.config.ts
+sidebars.ts
+tsconfig.json
+README.md
