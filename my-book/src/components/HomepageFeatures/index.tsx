@@ -2,51 +2,75 @@ import type {ReactNode} from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import image1Image from '@site/docs/assets/image1.png';
+import image2ModuleImage from '@site/docs/assets/image2.png';
+import image3ModuleImage from '@site/docs/assets/image3.png';
+import image4ModuleImage from '@site/docs/assets/image4.png';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  Svg?: React.ComponentType<React.ComponentProps<'svg'>>;
+  imgSrc?: string;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Module 1:',
+    imgSrc: image1Image,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+      The Robotic Nervous System (ROS 2)
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Module 2:',
+    imgSrc: image2ModuleImage,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+      The Digital Twin (Gazebo & Unity)
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Module 3:',
+    imgSrc: image3ModuleImage,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+       The AI-Robot Brain (NVIDIA Isaac)
       </>
     ),
-  },
-];
-
-function Feature({title, Svg, description}: FeatureItem) {
+      },
+    {
+      title: 'Module 4:',
+      imgSrc: image4ModuleImage,
+      description: (
+        <>
+        Vision-Language-Action (VLA)
+        </>
+      ),
+    },
+  ];
+function Feature({title, Svg, imgSrc, description, link}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--3')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        {link ? (
+          <a href={link}>
+            {imgSrc ? (
+              <img src={imgSrc} className={styles.featureSvg} alt={title} />
+            ) : (
+              <Svg className={styles.featureSvg} role="img" />
+            )}
+          </a>
+        ) : (
+          imgSrc ? (
+            <img src={imgSrc} className={styles.featureSvg} alt={title} />
+          ) : (
+            <Svg className={styles.featureSvg} role="img" />
+          )
+        )}
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
